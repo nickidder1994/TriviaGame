@@ -1,34 +1,55 @@
 //create variables for all questions
-var rightAnswer
-var wrongAnswer
+var correct = true
+var incorrect = false
 var question1
 var question2
 var question3
-var timer
+// var timer = 30
 
-var windowTimeout = setTimeout(function(){
-    alert("Times Up!")
-}, 60000)
-$(".time-remaining").append(windowTimeout)
-console.log(windowTimeout)
-// (function( $ ) {
-//     $.fn.checked = function(value) {
-//         if(value === true || value === false) {
-//             // Set the value of the checkbox
-//             $(this).each(function(){ this.checked = value; });
-//         } 
-//         else if(value === undefined || value === 'toggle') {
-//             // Toggle the checkbox
-//             $(this).each(function(){ this.checked = !this.checked; });
-//         }
+// var windowTimeout = setTimeout(function(){
+//     alert("Times Up!")
+// }, 30000)
+// console.log(windowTimeout)
 
-//         return this;
-//     };
-//create a timer 
-// if player runs out of time alert "out of time"
-//set correct answers
-//set wrong answers
-//alert how many questions were right or wrong
-//if player gets all questions right alert "you win"
-//if player gets all questions wrong alert "you lose"
-//set game to reset after alert 
+// $(".timeRemaining").append(windowTimeout)
+
+// function(countdown){
+//     var counter = 30;
+
+//     setInterval(function() {
+//       counter--;
+//       if (counter >= 0) {
+//         span = document.getElementById("time-remaining");
+//       }
+//       if (counter === 0) {
+//         alert("Times Up!")
+//           clearInterval(counter);
+//       }
+
+//     }, 1000);
+//     $(".time-remaining").append(counter)
+
+//   })();
+var timer = 30;
+var elem = document.getElementsByClassName("time-remaining");
+var timerId = setInterval(countdown, 1000);
+
+function countdown() {
+    if (timer === 0) {
+        clearTimeout(timerId);
+        alert("Times Up!")
+    } else {
+        elem.innerHTML = timer + 'time-remaining';
+        timer--;
+    }
+
+
+    $(".time-remaining").append(timer)
+
+
+    $(".true").click(function () {
+        console.log("True");
+    });
+    $(".false").click(function () {
+        console.log("False");
+    });
