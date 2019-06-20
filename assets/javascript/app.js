@@ -1,7 +1,7 @@
 //create variables for all questions
 var correct = true
 var incorrect = false
-var question1
+var question1 = true
 var question2
 var question3
 // var timer = 30
@@ -53,3 +53,4 @@ function countdown() {
     $(".false").click(function () {
         console.log("False");
     });
+    }
