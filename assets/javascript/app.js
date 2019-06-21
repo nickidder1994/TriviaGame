@@ -1,9 +1,10 @@
 //create variables for all questions
-var correct = true
-var incorrect = false
-var question1 = true
+var correct 
+var incorrect
+var question1 
 var question2
 var question3
+//create timer
 // var timer = 30
 
 // var windowTimeout = setTimeout(function(){
@@ -31,7 +32,8 @@ var question3
 
 //   })();
 var timer = 30;
-var elem = document.getElementsByClassName("time-remaining");
+var elem = $(".time-remaining")
+// var elem = document.getElementsByClassName("time-remaining");
 var timerId = setInterval(countdown, 1000);
 
 function countdown() {
@@ -39,18 +41,21 @@ function countdown() {
         clearTimeout(timerId);
         alert("Times Up!")
     } else {
-        elem.innerHTML = timer + 'time-remaining';
+        // elem.innerHTML = timer + 'time-remaining';
+        elem.text(timer)
         timer--;
     }
-
-
-    $(".time-remaining").append(timer)
-
-
-    $(".true").click(function () {
-        console.log("True");
-    });
+    //  $(".time-remaining").append(timer)
+    
+     //set values to true or false 
+     $(".true").click(function () {
+         console.log("True")
+     });
     $(".false").click(function () {
         console.log("False");
     });
-    }
+}
+// if(true === question1){
+//     console.log("correct")
+// }else{
+//     console.log("incorrect")
