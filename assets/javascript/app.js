@@ -1,9 +1,12 @@
 //create variables for all questions
 var correct 
 var incorrect
-var question1 
-var question2
-var question3
+var question1 = ["Maggie Simpson shot Mr. Burns."];
+var question2 = ["Homer J. Simpson's middle name is Jay."]
+var question3 = ["The Simpsons are from Springfield Illinois"]
+var question4 = ["In Futurama, Philip, Heubert, and the Professor are all voiced by the same person."]
+
+var answers = ["true", "true", "false", "true"];
 //create timer
 // var timer = 30
 
@@ -55,7 +58,12 @@ function countdown() {
         console.log("False");
     });
 }
-// if(true === question1){
-//     console.log("correct")
-// }else{
-//     console.log("incorrect")
+$('input.checkbox').on('change', function() {
+    $('input.checkbox').not(this).prop('checked', false);  
+});
+if (question1, question2, question3, question4 === answers) {
+    alert("You win!")
+} else{
+    alert("You lose!")
+}
+
